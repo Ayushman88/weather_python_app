@@ -1,5 +1,6 @@
 import requests
 import json
+import os 
 
 if __name__ == '__main__':
     print("Welcome to Climate App Created by Ayushman")
@@ -12,4 +13,6 @@ r = requests.get(url)
 # print(r.text)
 
 wdic = json.loads(r.text)
-print(wdic["current"]["temp_c"])
+w = wdic["current"]["temp_c"]
+
+os.system(f"say 'The current weather in {city} is {w} degrees'")
