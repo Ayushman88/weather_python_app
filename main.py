@@ -14,5 +14,6 @@ r = requests.get(url)
 
 wdic = json.loads(r.text)
 w = wdic["current"]["temp_c"]
+c = wdic["current"]["condition"]["text"]
 
-os.system(f"say 'The current weather in {city} is {w} degrees'")
+os.system(f"say 'The current weather in {city} is {w} degrees \n And the weather condition is {c}'")
